@@ -6,5 +6,5 @@ import com.qianlei.rpc.sample.service.HelloService
 
 fun main() {
     val helloService = BioInvocationHandler("127.0.0.1", 5678, HelloService::class.java, JsonSerializer()).proxy
-    println(helloService.hello("world"))
+    println(helloService.hello("world", "kotlin", "simple", "rpc"))
 }

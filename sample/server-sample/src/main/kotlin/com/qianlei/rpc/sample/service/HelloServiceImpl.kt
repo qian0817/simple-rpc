@@ -7,8 +7,8 @@ import com.qianlei.rpc.server.annotation.RpcService
  */
 @RpcService(name = "helloService")
 class HelloServiceImpl {
-    fun hello(msg: String): String {
-        println("收到客户端消息:$msg")
-        return "hello $msg"
+    fun hello(vararg msg: String): String {
+        println("收到客户端消息:${msg.contentDeepToString()}")
+        return "hello ${msg.contentDeepToString()}"
     }
 }
