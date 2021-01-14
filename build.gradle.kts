@@ -25,8 +25,10 @@ subprojects {
 
         implementation("cn.hutool", "hutool-all", "5.5.6")
 
-        implementation("cglib", "cglib", "3.3.0")
+        implementation("com.orbitz.consul", "consul-client", "1.4.0")
         implementation("io.lettuce", "lettuce-core", "6.0.1.RELEASE")
+
+        implementation("cglib", "cglib", "3.3.0")
         implementation("io.netty", "netty-all", "4.1.54.Final")
     }
 

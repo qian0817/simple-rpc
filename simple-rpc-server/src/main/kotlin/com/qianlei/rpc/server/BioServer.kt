@@ -23,6 +23,9 @@ class BioServer(
                 thread {
                     try {
                         val encodeRequest = socket.getInputStream().bufferedReader().readLine()
+                        if (encodeRequest.isNullOrEmpty()) {
+                            return@thread
+                        }
                         val rawRequest = HexUtil.decodeHex(encodeRequest)
                         val rpcRequest = serializer.parseRequest(rawRequest) { serviceName, methodName ->
                             val key = "$serviceName#$methodName"
